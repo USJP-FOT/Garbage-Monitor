@@ -16,7 +16,6 @@ Start the server:
 uvicorn main:app --reload
 ```
 
-### Run with Docker
 
 Build the image:
 
@@ -30,18 +29,7 @@ Start the container:
 docker run -p 8000:8000 garbage-monitor
 ```
 
-## API
 
-`POST /classify`
-
-Request body:
-
-```json
-{
-  "image_b64": "<base64 encoded image>",
-  "return_reason": true
-}
-```
 
 Response:
 
