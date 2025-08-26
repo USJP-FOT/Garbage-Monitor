@@ -1,21 +1,18 @@
 # Garbage-Monitor
 
-Simple FastAPI backend for classifying garbage images into material types.
+Spring Boot backend for classifying garbage images into material types.
 
 ## Running
 
-Install dependencies:
+Build and run with Maven:
 
 ```bash
-pip install -r requirements.txt
+mvn spring-boot:run
 ```
 
-Start the server:
+This starts the server on port 8080.
 
-```bash
-uvicorn main:app --reload
-```
-
+## Docker
 
 Build the image:
 
@@ -23,20 +20,20 @@ Build the image:
 docker build -t garbage-monitor .
 ```
 
-Start the container:
+Run the container:
 
 ```bash
-docker run -p 8000:8000 garbage-monitor
+docker run -p 8080:8080 garbage-monitor
 ```
 
-
-
-Response:
+## Response
 
 ```json
 {
   "label": "metal | plastic | paper | glass | mix | other",
   "confidence": 0.0,
-  "reason": "short phrase"
+  "reason": "classification not implemented"
 }
 ```
+
+> **Note:** The current implementation uses placeholder classification logic. Integrate a real model for actual predictions.
